@@ -1,12 +1,16 @@
 import 'package:get/get.dart';
+import 'package:second_test_softcent/app/modules/cardPage/providers/transaction_provider.dart';
+
+import '../../../data/models/transaction_model.dart';
 
 class CardPageController extends GetxController {
-  //TODO: Implement CardPageController
+  final loading = false.obs;
+  final transactionList = <Transaction>[].obs;
 
-  final count = 0.obs;
   @override
-  void onInit() {
+  void onInit() async {
     super.onInit();
+    await getTransactionList();
   }
 
   @override
@@ -16,5 +20,22 @@ class CardPageController extends GetxController {
 
   @override
   void onClose() {}
-  void increment() => count.value++;
+
+  getTransactionList() async {
+    try {
+      loading(true);
+      var transactions = await TransactionProvider().getTransactionList();
+      if (transactions != null) {
+        transactionList.clear();
+        if (transactions.data.transactions.isNotEmpty) {
+          transactionList.addAll(transactions.data.transactions);
+          print(transactionList);
+          update();
+        }
+      }
+    } finally {
+      loading(false);
+      update();
+    }
+  }
 }

@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import '../controllers/card_page_controller.dart';
 
 class CardPageView extends GetView<CardPageController> {
+  final controller = Get.put(CardPageController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
