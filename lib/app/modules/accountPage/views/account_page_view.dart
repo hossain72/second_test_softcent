@@ -9,12 +9,12 @@ class AccountPageView extends GetView<AccountPageController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('AccountPageView'),
+        title: Text('Account'),
         centerTitle: true,
       ),
       body: Center(
         child: Text(
-          'AccountPageView is working',
+          'Account Page',
           style: TextStyle(fontSize: 20),
         ),
       ),

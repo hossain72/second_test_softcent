@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
 
 class AccountPageController extends GetxController {
-  //TODO: Implement AccountPageController
 
   final count = 0.obs;
   @override

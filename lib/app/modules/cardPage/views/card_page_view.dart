@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import 'widgets/transaction_widget.dart';
+import 'widgets/transaction_list_widget.dart';
 
 import '../controllers/card_page_controller.dart';
+
+import '../../../data/utils/hex_color.dart';
 
 class CardPageView extends GetView<CardPageController> {
   final CardPageController controller = Get.put(CardPageController());
@@ -31,7 +33,7 @@ class CardPageView extends GetView<CardPageController> {
           FloatingActionButton.small(
             onPressed: null,
             child: Icon(Icons.add),
-            backgroundColor: Colors.green.shade400,
+            backgroundColor: HexColor("#2DBC77"),
           )
         ],
       ),
@@ -66,33 +68,7 @@ class CardPageView extends GetView<CardPageController> {
                       fontWeight: FontWeight.w500),
                 ),
               ),
-              Obx(() => ListView.builder(
-                  physics: NeverScrollableScrollPhysics(),
-                  shrinkWrap: true,
-                  itemCount: controller.transactionList.length,
-                  itemBuilder: (_, index) {
-                    var transaction = controller.transactionList[index];
-                    return Column(
-                      children: [
-                        TransactionWidget(
-                          transaction: transaction,
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        index != controller.transactionList.length - 1
-                            ? Padding(
-                                padding:
-                                    const EdgeInsets.only(left: 15, right: 15),
-                                child: Divider(
-                                  height: 1,
-                                  thickness: 1.1,
-                                ),
-                              )
-                            : Container()
-                      ],
-                    );
-                  })),
+              TransactionListWidget(),
               SizedBox(
                 height: 10,
               ),

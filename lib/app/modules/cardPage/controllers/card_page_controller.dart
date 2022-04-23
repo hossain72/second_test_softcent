@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
-import 'package:second_test_softcent/app/modules/cardPage/providers/transaction_provider.dart';
+
+import '../providers/transaction_provider.dart';
 
 import '../../../data/models/transaction_model.dart';
 
@@ -13,14 +14,6 @@ class CardPageController extends GetxController {
     await getTransactionList();
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {}
-
   getTransactionList() async {
     try {
       loading(true);
@@ -29,7 +22,6 @@ class CardPageController extends GetxController {
         transactionList.clear();
         if (transactions.data.transactions.isNotEmpty) {
           transactionList.addAll(transactions.data.transactions);
-          print(transactionList);
           update();
         }
       }

@@ -9,12 +9,12 @@ class OfferPageView extends GetView<OfferPageController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('OfferPageView'),
+        title: Text('Offer Page'),
         centerTitle: true,
       ),
       body: Center(
         child: Text(
-          'OfferPageView is working',
+          'Offer Page',
           style: TextStyle(fontSize: 20),
         ),
       ),

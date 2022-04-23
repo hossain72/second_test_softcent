@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../data/utils/hex_color.dart';
 import '../../../../data/models/transaction_model.dart';
 
 class TransactionWidget extends StatelessWidget {
@@ -99,7 +100,7 @@ class TransactionWidget extends StatelessWidget {
                     Text(
                       "+ \u09F3 ${transaction.amountRecieved}",
                       style: TextStyle(
-                          color: Colors.green.shade400,
+                          color: HexColor("#2DBC77"),
                           fontSize: 16,
                           fontFamily: "DMSans",
                           fontWeight: FontWeight.w500),
