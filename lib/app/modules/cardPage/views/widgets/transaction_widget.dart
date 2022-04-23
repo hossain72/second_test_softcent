@@ -5,7 +5,6 @@ import '../../../../data/models/transaction_model.dart';
 class TransactionWidget extends StatelessWidget {
   final Transaction transaction;
 
-
   const TransactionWidget({Key? key, required this.transaction})
       : super(key: key);
 
@@ -19,8 +18,7 @@ class TransactionWidget extends StatelessWidget {
             flex: 1,
             child: CircleAvatar(
               radius: 20, // Image radius
-              backgroundImage: NetworkImage(
-                  transaction.shopLogo.toString()),
+              backgroundImage: NetworkImage(transaction.shopLogo.toString()),
             ),
           ),
           SizedBox(
@@ -31,19 +29,23 @@ class TransactionWidget extends StatelessWidget {
             child: Column(
               children: [
                 Row(
-                  mainAxisAlignment:
-                  MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       transaction.shopName.toString(),
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 16,
-                          fontWeight: FontWeight.w600),
+                          fontFamily: "DMSans",
+                          fontWeight: FontWeight.w500),
                     ),
                     Text(
                       transaction.timestamp.toString(),
-                      style: TextStyle(color: Colors.grey.shade600, fontSize: 14),
+                      style: TextStyle(
+                          color: Colors.grey.shade600,
+                          fontSize: 14,
+                          fontFamily: "DMSans",
+                          fontWeight: FontWeight.w400),
                     ),
                   ],
                 ),
@@ -51,21 +53,22 @@ class TransactionWidget extends StatelessWidget {
                   height: 5,
                 ),
                 Row(
-                  mainAxisAlignment:
-                  MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       "Trans ID : ${transaction.transactionId}",
                       style: TextStyle(
                           color: Colors.grey.shade600,
                           fontSize: 14,
+                          fontFamily: "DMSans",
                           fontWeight: FontWeight.w400),
                     ),
                     Text(
                       "- \u09F3 ${transaction.amountSend}",
                       style: TextStyle(
                           color: Colors.red.shade400,
-                          fontSize: 14,
+                          fontSize: 16,
+                          fontFamily: "DMSans",
                           fontWeight: FontWeight.w500),
                     ),
                   ],
@@ -74,23 +77,21 @@ class TransactionWidget extends StatelessWidget {
                   height: 5,
                 ),
                 Row(
-                  mainAxisAlignment:
-                  MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Row(
                       children: [
-                        transaction.paymentType
-                            .toString() ==
-                            "Digital Payment"
+                        transaction.paymentType.toString() == "Digital Payment"
                             ? ImageIcon(AssetImage(
-                            "assets/images/png/digital_payment.png"))
+                                "assets/images/png/digital_payment.png"))
                             : ImageIcon(AssetImage(
-                            "assets/images/png/cash_payment.png")),
+                                "assets/images/png/cash_payment.png")),
                         Text(
                           "${transaction.paymentType}",
                           style: TextStyle(
                               color: Colors.grey.shade600,
                               fontSize: 14,
+                              fontFamily: "DMSans",
                               fontWeight: FontWeight.w400),
                         ),
                       ],
@@ -99,7 +100,8 @@ class TransactionWidget extends StatelessWidget {
                       "+ \u09F3 ${transaction.amountRecieved}",
                       style: TextStyle(
                           color: Colors.green.shade400,
-                          fontSize: 14,
+                          fontSize: 16,
+                          fontFamily: "DMSans",
                           fontWeight: FontWeight.w500),
                     ),
                   ],

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:second_test_softcent/app/modules/cardPage/views/widgets/transaction_widget.dart';
+
+import 'widgets/transaction_widget.dart';
 
 import '../controllers/card_page_controller.dart';
 
@@ -20,7 +21,10 @@ class CardPageView extends GetView<CardPageController> {
         title: Text(
           'Card',
           style: TextStyle(
-              color: Colors.black, fontSize: 18, fontWeight: FontWeight.w600),
+              color: Colors.black,
+              fontSize: 18,
+              fontFamily: "DMSans",
+              fontWeight: FontWeight.w500),
         ),
         centerTitle: true,
         actions: [
@@ -58,7 +62,8 @@ class CardPageView extends GetView<CardPageController> {
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 18,
-                      fontWeight: FontWeight.w600),
+                      fontFamily: "DMSans",
+                      fontWeight: FontWeight.w500),
                 ),
               ),
               Obx(() => ListView.builder(
@@ -75,15 +80,15 @@ class CardPageView extends GetView<CardPageController> {
                         SizedBox(
                           height: 10,
                         ),
-                        index !=
-                                controller.transactionList.length-1
+                        index != controller.transactionList.length - 1
                             ? Padding(
-                              padding: const EdgeInsets.only(left: 15, right: 15),
-                              child: Divider(
+                                padding:
+                                    const EdgeInsets.only(left: 15, right: 15),
+                                child: Divider(
                                   height: 1,
                                   thickness: 1.1,
                                 ),
-                            )
+                              )
                             : Container()
                       ],
                     );
