@@ -6,6 +6,8 @@ import 'transaction_widget.dart';
 
 import '../../controllers/card_page_controller.dart';
 
+import '../../../../data/utils/hex_color.dart';
+
 class TransactionListWidget extends StatefulWidget {
   const TransactionListWidget({Key? key}) : super(key: key);
 
@@ -34,7 +36,7 @@ class _TransactionListWidgetState extends State<TransactionListWidget> {
             child: Container(
               color: selectedIndex == index
                   ? Color.fromRGBO(45, 188, 119, 0.07)
-                  : Colors.white,
+                  : HexColor('#E5E5E5'),
               child: Column(
                 children: [
                   TransactionWidget(

@@ -19,7 +19,7 @@ class CardPageView extends GetView<CardPageController> {
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Colors.white,
+        backgroundColor: HexColor('#E5E5E5'),
         title: Text(
           'Card',
           style: TextStyle(
@@ -40,7 +40,7 @@ class CardPageView extends GetView<CardPageController> {
       body: Container(
         height: height,
         width: width,
-        color: Colors.white,
+        color: HexColor('#E5E5E5'),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,

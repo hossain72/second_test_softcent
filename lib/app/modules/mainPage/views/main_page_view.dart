@@ -53,6 +53,7 @@ class MainPageView extends GetView<MainPageController> {
                 ],
               );
             },
+            height: 77,
             backgroundColor: Colors.white,
             activeIndex: controller.bottomNavIndex.value,
             elevation: 5,
