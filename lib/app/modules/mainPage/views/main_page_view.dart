@@ -8,8 +8,8 @@ import 'package:second_test_softcent/app/modules/cardPage/views/card_page_view.d
 import 'package:second_test_softcent/app/modules/home/views/home_view.dart';
 import 'package:second_test_softcent/app/modules/offerPage/views/offer_page_view.dart';
 
+import '../../../data/utils/hex_color.dart';
 import '../controllers/main_page_controller.dart';
-import 'widgets/navigation_screen.dart';
 
 class MainPageView extends GetView<MainPageController> {
   final autoSizeGroup = AutoSizeGroup();
